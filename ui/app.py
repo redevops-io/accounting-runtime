@@ -158,7 +158,7 @@ def dashboard():
     # review queue — most recent 40 posted/flagged items
     queue = [r for r in rows][:40]
     qrows = "".join(
-        f"<tr><td><a href='/item/{esc(r['id'])}'>{esc(r['id'])}</a></td>"
+        f"<tr onclick=\"location.href='/item/{esc(r['id'])}'\" style='cursor:pointer'><td><a href='/item/{esc(r['id'])}'>{esc(r['id'])}</a></td>"
         f"<td>{esc(r['scenario'])}</td>"
         f"<td>{esc((r.get('document') or {}).get('supplier_name',''))}</td>"
         f"<td class='num'>{_money((r.get('posting_proposal') or {}).get('grand_total','')) if r.get('posting_proposal') else '—'}</td>"
