@@ -1,0 +1,14 @@
+# Large staged corpora — provenance tracked in data/PROVENANCE.md, not committed.
+data/documents/
+data/statements/
+data/regulatory/irc/*.xml
+data/regulatory/irc/*.zip
+data/regulatory/cfr/*.xml
+data/regulatory/irs-pubs/*.pdf
+**/.cache/
+*.pyc
+__pycache__/
+data/ground-truth/*.jsonl
+!data/ground-truth/sample.jsonl
+*.log
+engine/uv_*.log
