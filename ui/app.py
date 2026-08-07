@@ -26,7 +26,8 @@ app = FastAPI(title="Agentic Accounting Runtime — review console")
 
 
 def _load():
-    path = GT if os.path.exists(GT) else SAMPLE
+    # DATA_FILE -> repo sample -> sample bundled next to app.py (for the container)
+    path = next((p for p in (GT, SAMPLE, os.path.join(HERE, "sample.jsonl")) if os.path.exists(p)), GT)
     rows = [json.loads(l) for l in open(path)] if os.path.exists(path) else []
     xval = {}
     if os.path.exists(XVAL):

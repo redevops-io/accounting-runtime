@@ -3,6 +3,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
+COPY sample.jsonl .
 # data is mounted or baked at deploy; sample.jsonl ships in the repo
 ENV PORT=8300
 EXPOSE 8300
