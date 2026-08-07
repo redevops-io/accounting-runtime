@@ -48,6 +48,20 @@ docker compose -p odoogen -f odoo/docker-compose.yml up -d   # Odoo on :8101
 N=50 python3 cross_validate_odoo.py                    # -> erpnext_vs_odoo.jsonl
 ```
 
+## Review console (deployable UI)
+
+A FastAPI + MD3 dashboard over the generated data — the review surface an accountant would
+use: KPI tiles, a review queue, and per-invoice **document → proposed posting → GL entries →
+verification** with approve / amend / reject. Same reference pattern as the ReDevOps
+agentic-app fleet. Runs on the committed `sample.jsonl` out of the box (point `DATA_FILE` at a
+full run to see all of it).
+
+```bash
+cd ui && docker build -t accounting-ui . && docker run --rm -p 8300:8300 accounting-ui
+# or: pip install -r ui/requirements.txt && python3 -m uvicorn app:app --port 8300  (from ui/)
+```
+Then open http://localhost:8300. Set `ERPNEXT_FRONT_URL` for the "Open in ERPNext" link.
+
 ## Going further
 
 This example is the foundation. A production deployment adds: production **document
