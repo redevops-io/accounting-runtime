@@ -16,7 +16,7 @@ isolated: its own compose project (`erpgen`), site (`frontend`), DB volumes, and
 ## Stand it up
 ```bash
 docker compose -p erpgen up -d        # pinned frappe/erpnext v16.31.1 @digest; creates site
-# wait for erpgen-create-site-1 to exit 0, then :8100 serves ERPNext (admin/admin)
+# wait for erpgen-create-site-1 to exit 0, then :8100 serves ERPNext (Administrator / admin)
 ```
 
 ## Generate

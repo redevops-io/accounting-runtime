@@ -38,7 +38,7 @@ Odoo cross-validation 50/50 agree. Sample output: `data/ground-truth/sample.json
 
 ```bash
 # 1. bring up the disposable engines
-cd sandbox && docker compose -p erpgen up -d          # ERPNext on :8100 (admin/admin)
+cd sandbox && docker compose -p erpgen up -d          # ERPNext on :8100 (Administrator / admin)
 docker compose -p odoogen -f odoo/docker-compose.yml up -d   # Odoo on :8101
 
 # 2. generate correct-by-construction posting pairs
